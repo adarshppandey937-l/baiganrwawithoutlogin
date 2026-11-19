@@ -43,7 +43,8 @@ export function TopicView({
     fetch(
       `/api/rwa?path=topics&examId=${encodeURIComponent(courseId)}&subjectId=${encodeURIComponent(subjectId)}`
     )
-      .then((res) => res.json())
+      .then((res) => (res.ok ? res.json() : null))
+      .catch(() => null)
       .then((res) => {
         if (cancelled) return;
         const rwaTopics = res && res.success && Array.isArray(res.data) ? res.data : [];
@@ -63,7 +64,7 @@ export function TopicView({
         return fetch(
           `/api/teachx/topics?courseid=${encodeURIComponent(courseId)}&subjectid=${encodeURIComponent(subjectId)}`
         )
-          .then((r) => r.json())
+          .then((r) => (r.ok ? r.json() : null))
           .then((r) => {
             if (cancelled) return;
             if (r && Array.isArray(r.data)) {

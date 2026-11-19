@@ -65,7 +65,8 @@ export function SubjectView({
     };
 
     fetch(`/api/rwa?path=freecontent&courseId=${encodeURIComponent(courseId)}`)
-      .then((res) => res.json())
+      .then((res) => (res.ok ? res.json() : null))
+      .catch(() => null)
       .then((res) => {
         if (cancelled) return;
         const rwaSubjects =
@@ -84,7 +85,7 @@ export function SubjectView({
           return;
         }
         return fetch(`/api/teachx/subjects?courseid=${encodeURIComponent(courseId)}`)
-          .then((r) => r.json())
+          .then((r) => (r.ok ? r.json() : null))
           .then((r) => {
             setResult(r && Array.isArray(r.data) ? r.data : []);
           });
