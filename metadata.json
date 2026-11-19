@@ -1,0 +1,6 @@
+{
+  "name": "PANDEY JI",
+  "description": "PANDEY JI Premium Batches platform featuring 163+ free batches, live classes, test series, topic-wise video lectures, class PDFs, and study notes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

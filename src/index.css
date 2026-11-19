@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Noto Sans Devanagari", system-ui, sans-serif;
+  --font-edu-syne: "Syne", "Noto Sans Devanagari", sans-serif;
+  --color-themePink: #ec4899;
+  --color-themePinkDeep: #be185d;
+  --color-themeGreen: #10b981;
+}
+
+.pandeyji-root {
+  color: #4a3b41;
+  background-color: #fff7fa;
+  background-image:
+    radial-gradient(circle at 12% 8%, #f472b61a 0%, #0000 42%),
+    radial-gradient(circle at 88% 4%, #ec489914 0%, #0000 38%),
+    radial-gradient(circle at 50% 100%, #f9a8d41a 0%, #0000 45%);
+}
+
+.pandeyji-root .btn-click-effect {
+  transition: transform 0.1s ease-in-out;
+}
+
+.pandeyji-root .btn-click-effect:active {
+  transform: scale(0.95);
+}
+
+.pandeyji-root .premium-card {
+  background-color: #fff;
+  border: 1px solid #ec489924;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 18px -6px #ec48991f;
+}
+
+.pandeyji-root .premium-card:hover {
+  border-color: #ec489973;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px -10px #ec489947;
+}
+
+.pandeyji-root .nav-glass {
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  background: #fff7faeb;
+  border-bottom: 1px solid #ec489926;
+}
+
+.pandeyji-root .modal-glass {
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  background: #fffffff7;
+  border: 1px solid #ec48992e;
+  box-shadow: 0 25px 50px -12px #be185d40;
+}
+
+.pandeyji-root ::-webkit-scrollbar {
+  width: 6px;
+}
+
+.pandeyji-root ::-webkit-scrollbar-track {
+  background: #fff7fa;
+}
+
+.pandeyji-root ::-webkit-scrollbar-thumb {
+  background: #f9a8d4;
+  border-radius: 10px;
+}
+
+.pandeyji-root ::-webkit-scrollbar-thumb:hover {
+  background: #ec4899;
+}
+
+.pandeyji-root .fade-in-pop {
+  opacity: 0;
+  animation: 0.5s ease-out forwards fadeInPop;
+}
+
+@keyframes fadeInPop {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -100%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%);
+  }
+}
+
+.pandeyji-root .toast-enter {
+  animation: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards slideDown;
+}
+
+.pandeyji-root .hide-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.pandeyji-root .hide-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
